@@ -1,0 +1,16 @@
+SPDX-License-Identifier: CC-BY-4.0
+
+The adapted anatomical assets in this directory, including the encoded mesh
+chunks and source-derived metadata, are distributed under the Creative
+Commons Attribution 4.0 International license.
+
+Original sources: BodyParts3D, © The Database Center for Life Science;
+Human Reference Atlas / HuBMAP and the associated reference-object creators.
+Project-specific adaptations and schematic additions: © 2026 Zihan Wang.
+
+See ../ATTRIBUTION.md and sources.json for source credits and modifications.
+
+License summary: https://creativecommons.org/licenses/by/4.0/
+Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+The application code's MIT license does not replace this data license.

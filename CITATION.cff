@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it and separately credit the anatomical datasets listed in public/ATTRIBUTION.md."
+title: "Human Atlas 3D"
+type: software
+version: 1.0.0
+authors:
+  - family-names: Wang
+    given-names: Zihan
+repository-code: "https://github.com/wangzh12023/human-atlas-3d"
+url: "https://github.com/wangzh12023/human-atlas-3d"
+license: MIT
+abstract: "A browser-based interactive human anatomy atlas with male/female models, system layers, bilingual search, and regional close-ups. Anatomical data has separate CC BY 4.0 attribution requirements."
+keywords:
+  - anatomy
+  - education
+  - visualization
+  - WebGL

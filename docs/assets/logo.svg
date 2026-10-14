@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">Human Atlas 3D</title>
+  <desc id="desc">A stylized human figure within an orbit, in coral and slate.</desc>
+  <rect x="2" y="2" width="92" height="92" rx="27" fill="#2c3a45"/>
+  <ellipse cx="48" cy="49" rx="32" ry="25" fill="none" stroke="#7fa99c" stroke-width="2" transform="rotate(-32 48 49)"/>
+  <circle cx="48" cy="25" r="8" fill="#f2eee7"/>
+  <path d="M37 38C40 35 56 35 59 38L68 58C69 61 64 64 62 60L56 48L54 71C54 76 49 76 49 71L48 58L47 71C47 76 42 76 42 71L40 48L34 60C32 64 27 61 28 58Z" fill="#df9a87"/>
+  <path d="M48 38V53" stroke="#f2eee7" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="77" cy="33" r="4" fill="#7fa99c"/>
+</svg>

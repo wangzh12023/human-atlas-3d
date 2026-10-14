@@ -1,0 +1,44 @@
+{
+  "name": "human-atlas-3d",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/wangzh12023/human-atlas-3d#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangzh12023/human-atlas-3d.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wangzh12023/human-atlas-3d/issues"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "keywords": [
+    "anatomy",
+    "threejs",
+    "webgl",
+    "education",
+    "visualization",
+    "bodyparts3d",
+    "human-reference-atlas"
+  ],
+  "type": "module",
+  "description": "Interactive 3D human anatomy atlas (male / female) with sports-focused regional close-ups",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "encode": "node pipeline/encode.mjs",
+    "check:assets": "node tools/check-assets.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.6",
+    "meshoptimizer": "1.2.0",
+    "three": "0.185.0"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.13.0",
+    "vite": "^6.4.4"
+  }
+}

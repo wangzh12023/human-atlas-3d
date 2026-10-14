@@ -1,0 +1,35 @@
+name: "🐛 Bug report / 问题报告"
+description: Report an interaction, rendering, or content problem.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题与相关结构 / Problem and affected structure
+      description: Include a structure or region name when relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤 / Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 预期与实际表现 / Expected and actual behavior
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 浏览器与操作系统 / Browser and OS
+      placeholder: "Chrome, Windows 11"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 截图、日志或内容来源 / Screenshots, logs, or content sources

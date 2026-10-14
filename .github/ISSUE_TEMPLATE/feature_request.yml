@@ -1,0 +1,18 @@
+name: "💡 Feature request / 功能建议"
+description: Suggest a learning experience or an interaction improvement.
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: use_case
+    attributes:
+      label: 使用场景 / Use case
+      description: Explain what you are trying to learn or do.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 改进建议 / Proposed improvement
+    validations:
+      required: true

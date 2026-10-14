@@ -1,0 +1,166 @@
+{
+  "license": "CC-BY-4.0",
+  "library": "https://humanatlas.io/3d-reference-library",
+  "bodyparts3d": {
+    "version": "4.0",
+    "archive": "isa_BP3D_4.0_obj_99.zip",
+    "download": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html",
+    "license": "https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html"
+  },
+  "hra": [
+    {
+      "file": "3d-vh-f-fallopian-tube-l.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/fallopian-tube-female-left/v1.2#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/fallopian-tube-female-left/v1.2/assets/3d-vh-f-fallopian-tube-l.glb",
+      "label": "Left fallopian tube",
+      "role": "female-specific input"
+    },
+    {
+      "file": "3d-vh-f-fallopian-tube-r.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/fallopian-tube-female-right/v1.2#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/fallopian-tube-female-right/v1.2/assets/3d-vh-f-fallopian-tube-r.glb",
+      "label": "Right fallopian tube",
+      "role": "female-specific input"
+    },
+    {
+      "file": "3d-vh-f-heart.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/heart-female/v1.3#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/heart-female/v1.3/assets/3d-vh-f-heart.glb",
+      "label": "heart",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-intervertebral-disk.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/intervertebral-disk-female/v1.0#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/intervertebral-disk-female/v1.0/assets/3d-vh-f-intervertebral-disk.glb",
+      "label": "intervertebral disk",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-kidney-l.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/kidney-female-left/v1.3#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/kidney-female-left/v1.3/assets/3d-vh-f-kidney-l.glb",
+      "label": "Left kidney",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-kidney-r.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/kidney-female-right/v1.3#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/kidney-female-right/v1.3/assets/3d-vh-f-kidney-r.glb",
+      "label": "Right kidney",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-knee-l.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/knee-female-left/v1.3#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/knee-female-left/v1.3/assets/3d-vh-f-knee-l.glb",
+      "label": "Left knee",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-knee-r.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/knee-female-right/v1.3#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/knee-female-right/v1.3/assets/3d-vh-f-knee-r.glb",
+      "label": "Right knee",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-liver.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/liver-female/v1.2#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/liver-female/v1.2/assets/3d-vh-f-liver.glb",
+      "label": "liver",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-lung.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/lung-female/v1.4#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/lung-female/v1.4/assets/3d-vh-f-lung.glb",
+      "label": "lung",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-mammary-gland-l.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/mammary-gland-female-left/v1.1#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/mammary-gland-female-left/v1.1/assets/3d-vh-f-mammary-gland-l.glb",
+      "label": "Left mammary gland",
+      "role": "female-specific input"
+    },
+    {
+      "file": "3d-vh-f-mammary-gland-r.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/mammary-gland-female-right/v1.1#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/mammary-gland-female-right/v1.1/assets/3d-vh-f-mammary-gland-r.glb",
+      "label": "Right mammary gland",
+      "role": "female-specific input"
+    },
+    {
+      "file": "3d-vh-f-manubrium.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/manubrium-female/v1.0#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/manubrium-female/v1.0/assets/3d-vh-f-manubrium.glb",
+      "label": "manubrium",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-ovary-l.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/ovary-female-left/v1.3#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/ovary-female-left/v1.3/assets/3d-vh-f-ovary-l.glb",
+      "label": "Left ovary",
+      "role": "female-specific input"
+    },
+    {
+      "file": "3d-vh-f-ovary-r.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/ovary-female-right/v1.3#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/ovary-female-right/v1.3/assets/3d-vh-f-ovary-r.glb",
+      "label": "Right ovary",
+      "role": "female-specific input"
+    },
+    {
+      "file": "3d-vh-f-pelvis.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/pelvis-female/v1.3#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/pelvis-female/v1.3/assets/3d-vh-f-pelvis.glb",
+      "label": "pelvis",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-skin.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/skin-female/v1.5#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/skin-female/v1.5/assets/3d-vh-f-skin.glb",
+      "label": "skin",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-spleen.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/spleen-female/v1.3#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/spleen-female/v1.3/assets/3d-vh-f-spleen.glb",
+      "label": "spleen",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-sternum.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/sternum-female/v1.0#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/sternum-female/v1.0/assets/3d-vh-f-sternum.glb",
+      "label": "sternum",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-trachea.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/trachea-female/v1.1#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/trachea-female/v1.1/assets/3d-vh-f-trachea.glb",
+      "label": "trachea",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-urinary-bladder.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/urinary-bladder-female/v1.2#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/urinary-bladder-female/v1.2/assets/3d-vh-f-urinary-bladder.glb",
+      "label": "urinary bladder",
+      "role": "registration reference"
+    },
+    {
+      "file": "3d-vh-f-uterus.glb",
+      "reference": "https://purl.humanatlas.io/ref-organ/uterus-female/v1.2#primary",
+      "download": "https://cdn.humanatlas.io/digital-objects/ref-organ/uterus-female/v1.2/assets/3d-vh-f-uterus.glb",
+      "label": "uterus",
+      "role": "female-specific input"
+    }
+  ]
+}

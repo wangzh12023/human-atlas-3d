@@ -1,0 +1,24 @@
+node_modules/
+dist/
+pipeline/raw/
+__pycache__/
+*.pyc
+.backups/
+.cache/
+.venv/
+tools/qa/
+src/content/_parts/
+src/content/_piece_names_for_writers.tsv
+.env
+.env.*
+!.env.example
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Local reference videos must never be published.
+*.[mM][pP]4
+*.mov
+*.avi
+*.webm

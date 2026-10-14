@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Human Atlas 3D · 交互式人体解剖图谱</title>
+  <meta name="description" content="交互式 3D 人体解剖图谱：男性 / 女性结构切换、运动相关部位特写、器官与系统浏览。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%232c3a45'/%3E%3Cpath d='M32 14a6 6 0 1 1 0 12a6 6 0 0 1 0-12zm-10 16h20l-3 22h-4l-1-12h-4l-1 12h-4z' fill='%23f2efe9'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <canvas id="scene" aria-label="3D 人体模型"></canvas>
+
+    <!-- brand -->
+    <header class="brand">
+      <div class="eyebrow"><span class="dot"></span>INTERACTIVE ANATOMY · 交互式解剖</div>
+      <h1>Human Atlas <span class="badge">3D</span></h1>
+      <div class="sub"><span id="pieceCount">—</span> modeled pieces <span class="sep">·</span> BodyParts3D + HRA</div>
+    </header>
+
+    <!-- sex switch -->
+    <div class="sex-switch card" role="radiogroup" aria-label="性别">
+      <button class="sex-btn active" data-sex="male" role="radio" aria-checked="true"><span class="sym">♂</span>男性</button>
+      <button class="sex-btn" data-sex="female" role="radio" aria-checked="false"><span class="sym">♀</span>女性</button>
+      <span class="sex-thumb"></span>
+    </div>
+
+    <!-- left panel -->
+    <aside class="panel card" id="leftPanel">
+      <div class="panel-tabs">
+        <button class="ptab active" data-tab="systems">系统 <small>Systems</small></button>
+        <button class="ptab" data-tab="regions">部位特写 <small>Regions</small></button>
+      </div>
+
+      <section class="tab-body" data-tab="systems">
+        <div class="panel-head">
+          <span class="title">Systems</span>
+          <span class="pill" id="systemCount">15</span>
+        </div>
+        <div class="seg" id="presetSeg">
+          <button data-preset="all" class="active">All</button>
+          <button data-preset="skeleton">Skeleton</button>
+          <button data-preset="organs">Organs</button>
+        </div>
+        <ul class="sys-list" id="sysList"></ul>
+        <div class="panel-foot">
+          <span><span id="visibleCount">0</span> pieces visible</span>
+          <button class="link" id="hideAll">Hide all</button>
+        </div>
+      </section>
+
+      <section class="tab-body" data-tab="regions" hidden>
+        <div class="panel-head">
+          <span class="title">部位特写</span>
+          <span class="pill" id="regionCount">0</span>
+        </div>
+        <div class="seg seg-wrap" id="regionGroups"></div>
+        <ul class="region-list" id="regionList"></ul>
+      </section>
+    </aside>
+
+    <!-- search -->
+    <div class="topright">
+      <div class="search card" id="searchBox">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg>
+        <input id="searchInput" type="text" placeholder="Find a structure · 搜索结构" autocomplete="off" spellcheck="false" />
+        <kbd>/</kbd>
+        <ul class="search-results card" id="searchResults" hidden></ul>
+      </div>
+      <button class="icon-btn card" id="infoBtn" title="关于 / About" aria-label="关于">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg>
+      </button>
+    </div>
+
+    <!-- inspector -->
+    <aside class="inspector card" id="inspector" hidden>
+      <button class="close" id="inspClose" aria-label="关闭">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="insp-bar" id="inspBar"></div>
+      <div class="insp-eyebrow" id="inspSystem">Muscles</div>
+      <h2 class="insp-title" id="inspTitle">—</h2>
+      <div class="insp-sub" id="inspSub"></div>
+      <div class="insp-scroll">
+        <p class="insp-desc" id="inspDesc"></p>
+        <p class="insp-sport" id="inspSport" hidden></p>
+        <p class="insp-note" id="inspNote">System overview · structure identified from source anatomy</p>
+        <div class="insp-meta">
+          <div><label>Atlas reference</label><span id="inspRef">—</span></div>
+          <div><label>Selected pieces</label><span id="inspCount">1</span></div>
+        </div>
+        <a class="insp-link" id="inspLink" target="_blank" rel="noopener">View anatomical source ↗</a>
+      </div>
+      <button class="primary" id="isolateBtn">
+        <svg viewBox="0 0 24 24"><path d="M4 9V5h4M20 9V5h-4M4 15v4h4M20 15v4h-4"/><circle cx="12" cy="12" r="2.6"/></svg>
+        <span id="isolateLabel">Isolate structure</span>
+        <svg class="chev" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+      <button class="link center" id="clearSel">Clear selection</button>
+    </aside>
+
+    <!-- region card -->
+    <aside class="region-card card" id="regionCard" hidden>
+      <button class="close" id="regionClose" aria-label="关闭">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <div class="insp-bar" style="background:#c8705f"></div>
+      <div class="insp-eyebrow" id="rcGroup">部位特写 · Close-up</div>
+      <h2 class="insp-title" id="rcTitle">—</h2>
+      <div class="insp-sub" id="rcSub"></div>
+      <div class="rc-scroll" id="rcBody"></div>
+      <div class="rc-nav">
+        <button class="ghost" id="rcPrev">‹ 上一个</button>
+        <button class="ghost" id="rcOrbit" title="自动环绕">⟳ 环绕</button>
+        <button class="ghost" id="rcNext">下一个 ›</button>
+      </div>
+    </aside>
+
+    <button class="panel-toggle card" id="panelToggle" aria-label="打开面板">☰ 系统 / 部位</button>
+
+    <!-- view toolbar -->
+    <nav class="viewbar card" id="viewbar">
+      <button data-view="iso" title="3/4 视角">¾</button>
+      <button data-view="front" class="active" title="前面 Front">F</button>
+      <button data-view="side" title="侧面 Side">S</button>
+      <button data-view="back" title="背面 Back">B</button>
+      <span class="vsep"></span>
+      <button id="autoRotate" title="自动旋转">
+        <svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6"/><path d="M20 4v4h-4"/></svg>
+      </button>
+      <button id="resetView" title="重置视角">
+        <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6"/><path d="M4 4v4h4"/></svg>
+      </button>
+    </nav>
+
+    <!-- explode -->
+    <div class="explode-wrap">
+      <div class="stage-label" id="stageLabel">ADULT HUMAN · MALE</div>
+      <div class="explode card">
+        <div class="ex-main">
+          <div class="ex-row">
+            <span class="ex-title">Explode anatomy</span>
+            <span class="ex-val"><b id="explodeVal">0</b> %</span>
+          </div>
+          <div class="slider" id="explodeSlider" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+            <div class="track"><div class="fill" id="explodeFill"></div></div>
+            <div class="knob" id="explodeKnob"></div>
+          </div>
+          <div class="ex-row ex-labels"><span>Assembled</span><span>Every piece</span></div>
+        </div>
+        <button class="ex-reset" id="explodeReset">
+          <svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.3-5.6"/><path d="M4 4v4h4"/></svg>
+          <span>Reset</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- hints / credits -->
+    <footer class="hints" id="hints"><span>Drag to orbit</span><span>Scroll / pinch to zoom</span><span>Tap to inspect</span></footer>
+    <button class="credits-btn" id="creditsBtn">Source &amp; credits <svg viewBox="0 0 24 24"><path d="M8 16L16 8M9 8h7v7"/></svg></button>
+
+    <!-- hover tooltip -->
+    <div class="tooltip" id="tooltip" hidden></div>
+
+    <!-- hotspots layer -->
+    <div class="hotspots" id="hotspots"></div>
+
+    <!-- loader -->
+    <div class="loader" id="loader">
+      <div class="loader-inner">
+        <div class="eyebrow"><span class="dot"></span>INTERACTIVE ANATOMY</div>
+        <div class="loader-title">Human Atlas <span class="badge">3D</span></div>
+        <div class="loader-bar"><div id="loaderFill"></div></div>
+        <div class="loader-text" id="loaderText">正在加载解剖模型…</div>
+      </div>
+    </div>
+
+    <!-- modal -->
+    <div class="modal" id="modal" hidden>
+      <div class="modal-card card">
+        <button class="close" id="modalClose" aria-label="关闭"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        <div id="modalBody"></div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
