@@ -7,13 +7,7 @@
 **Explore anatomy in your browser, from the whole body to a single tendon.**
 
 Male / female models · System layers · Regional close-ups · Chinese / English search
-
-[![Build](https://github.com/wangzh12023/human-atlas-3d/actions/workflows/ci.yml/badge.svg)](https://github.com/wangzh12023/human-atlas-3d/actions/workflows/ci.yml)
-[![Code: MIT](https://img.shields.io/badge/Code-MIT-334155?style=flat-square&logo=opensourceinitiative&logoColor=white)](LICENSE)
-[![Anatomy: CC BY 4.0](https://img.shields.io/badge/Anatomy-CC_BY_4.0-8b5e66?style=flat-square&logo=creativecommons&logoColor=white)](public/ATTRIBUTION.md)
-[![Three.js](https://img.shields.io/badge/Three.js-WebGL2-111827?style=flat-square&logo=threedotjs&logoColor=white)](https://threejs.org/)
-[![Vite](https://img.shields.io/badge/Vite-6-646cff?style=flat-square&logo=vite&logoColor=white)](https://vite.dev/)
-[![Stars](https://img.shields.io/github/stars/wangzh12023/human-atlas-3d?style=flat-square&logo=github)](https://github.com/wangzh12023/human-atlas-3d/stargazers)
+ [![Build](https://github.com/wangzh12023/human-atlas-3d/actions/workflows/ci.yml/badge.svg)](https://github.com/wangzh12023/human-atlas-3d/actions/workflows/ci.yml) [![Code: MIT](https://img.shields.io/badge/Code-MIT-334155?style=flat-square&logo=opensourceinitiative&logoColor=white)](LICENSE) [![Anatomy: CC BY 4.0](https://img.shields.io/badge/Anatomy-CC_BY_4.0-8b5e66?style=flat-square&logo=creativecommons&logoColor=white)](public/ATTRIBUTION.md) [![Three.js](https://img.shields.io/badge/Three.js-WebGL2-111827?style=flat-square&logo=threedotjs&logoColor=white)](https://threejs.org/) [![Vite](https://img.shields.io/badge/Vite-6-646cff?style=flat-square&logo=vite&logoColor=white)](https://vite.dev/) [![Stars](https://img.shields.io/github/stars/wangzh12023/human-atlas-3d?style=flat-square&logo=github)](https://github.com/wangzh12023/human-atlas-3d/stargazers)
 
 [Quick start](#-quick-start) · [Features](#-features) · [Controls](#-controls) · [Licensing](#-data-and-licensing) · [Contributing](CONTRIBUTING.md)
 
